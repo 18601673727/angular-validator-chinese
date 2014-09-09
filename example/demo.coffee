@@ -16,7 +16,7 @@ angular.module 'app', ['validator', 'validator.rules']
                     not (value in (x.name for x in response.data))
                 else
                     no
-        error: "do not use 'Kelp' or 'x'"
+        error: "不允许使用 'Kelp' 或 'x'"
 
     $validatorProvider.register 'backendSubmit',
         validator: (value, scope, element, attrs, $injector) ->
@@ -27,7 +27,7 @@ angular.module 'app', ['validator', 'validator.rules']
                     not (value in (x.name for x in response.data))
                 else
                     no
-        error: "do not use 'Kelp' or 'x'"
+        error: "不允许使用 'Kelp' 或 'x'"
 
     $validatorProvider.register 'backendBlur',
         invoke: 'blur'
@@ -39,28 +39,28 @@ angular.module 'app', ['validator', 'validator.rules']
                     not (value in (x.name for x in response.data))
                 else
                     no
-        error: "do not use 'Kelp' or 'x'"
+        error: "不允许使用 'Kelp' 或 'x'"
 
     # submit - required
     $validatorProvider.register 'requiredSubmit',
         validator: /^.+$/
-        error: 'This field is required.'
+        error: '此处为必填项。'
 
     # blur - required
     $validatorProvider.register 'requiredBlur',
         invoke: 'blur'
         validator: /^.+$/
-        error: 'This field is required.'
+        error: '此处为必填项。'
 
     $validatorProvider.register 'numberSubmit',
         validator: /^[-+]?[0-9]*[\.]?[0-9]*$/
-        error: 'This field should be number.'
+        error: '此处需为数字。'
 
     # watch - custom less than xx
     $validatorProvider.register 'customLess',
         invoke: 'watch'
         validator: (value, scope) -> value < scope.formWatch.number
-        error: 'It should less than number 1.'
+        error: '此处需为小于Number 1的数字。'
 
 
 # ----------------------------------------
@@ -70,7 +70,7 @@ angular.module 'app', ['validator', 'validator.rules']
     $validator.register 'requiredRun',
         invoke: 'watch'
         validator: /^.+$/
-        error: 'This field is requrired.'
+        error: '此处为必填项。'
 
 
 # ----------------------------------------

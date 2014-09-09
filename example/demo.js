@@ -25,7 +25,7 @@
           }
         });
       },
-      error: "do not use 'Kelp' or 'x'"
+      error: "不允许使用 'Kelp' 或 'x'"
     });
     $validatorProvider.register('backendSubmit', {
       validator: function(value, scope, element, attrs, $injector) {
@@ -49,7 +49,7 @@
           }
         });
       },
-      error: "do not use 'Kelp' or 'x'"
+      error: "不允许使用 'Kelp' 或 'x'"
     });
     $validatorProvider.register('backendBlur', {
       invoke: 'blur',
@@ -74,33 +74,33 @@
           }
         });
       },
-      error: "do not use 'Kelp' or 'x'"
+      error: "不允许使用 'Kelp' 或 'x'"
     });
     $validatorProvider.register('requiredSubmit', {
       validator: /^.+$/,
-      error: 'This field is required.'
+      error: '此处为必填项。'
     });
     $validatorProvider.register('requiredBlur', {
       invoke: 'blur',
       validator: /^.+$/,
-      error: 'This field is required.'
+      error: '此处为必填项。'
     });
     $validatorProvider.register('numberSubmit', {
       validator: /^[-+]?[0-9]*[\.]?[0-9]*$/,
-      error: 'This field should be number.'
+      error: '此处需为数字。'
     });
     return $validatorProvider.register('customLess', {
       invoke: 'watch',
       validator: function(value, scope) {
         return value < scope.formWatch.number;
       },
-      error: 'It should less than number 1.'
+      error: '此处需为小于Number 1的数字。'
     });
   }).run(function($validator) {
     return $validator.register('requiredRun', {
       invoke: 'watch',
       validator: /^.+$/,
-      error: 'This field is requrired.'
+      error: '此处为必填项。'
     });
   }).controller('DemoController', function($scope, $validator) {
     $scope.formWatch = {
